@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 para garantir que os caracteres acentuados e especiais sejam exibidos corretamente -->
+    <meta charset="UTF-8">
+    
+    <!-- Torna a página responsiva, ajustando o layout para diferentes tamanhos de tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Login</title>
+</head>
+<body>
+    <!-- Título principal da página -->
+    <h1>Login</h1>
+
+    <!-- Formulário de login -->
+    <form action="/auth/login" method="POST">
+        <!-- Campo de entrada para o e-mail do usuário -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required> <!-- O campo de e-mail é obrigatório e deve ser validado como um e-mail válido -->
+        <br><br>
+
+        <!-- Campo de entrada para a senha do usuário -->
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required> <!-- O campo de senha é obrigatório -->
+        <br><br>
+
+        <!-- Botão para enviar o formulário -->
+        <button type="submit">Entrar</button>
+    </form>
+
+    <!-- Link para a página de registro para usuários que ainda não têm conta -->
+    <p>Não tem uma conta? <a href="/auth/register">Registre-se aqui</a></p>
+</body>
+</html>

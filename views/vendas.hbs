@@ -1,0 +1,25 @@
+{{! vendas.hbs }}
+{{#*inline "title"}}Página de Vendas{{/inline}} <!-- Define o título da página de vendas -->
+
+<!-- Título principal da página -->
+<h2>Página de Vendas</h2>
+
+<!-- Formulário para o usuário selecionar os ingressos a serem comprados -->
+<form action="/vendas" method="POST"> <!-- Rota POST para comprar ingressos -->
+  
+  <!-- Campo para quantidade de ingressos VIP -->
+  <label for="vip">Ingresso VIP (R$ 50):</label>
+  <!-- O campo 'vip' permite ao usuário escolher a quantidade de ingressos VIP -->
+  <input type="number" id="vip" name="vip" min="0" value="0"> <!-- O valor mínimo é 0, e o valor inicial é 0 -->
+
+  <!-- Campo para quantidade de ingressos Normais -->
+  <label for="normal">Ingresso Normal (R$ 20):</label>
+  <!-- O campo 'normal' permite ao usuário escolher a quantidade de ingressos Normais -->
+  <input type="number" id="normal" name="normal" min="0" value="0"> <!-- O valor mínimo é 0, e o valor inicial é 0 -->
+
+  <!-- Botão para enviar o formulário e realizar a compra -->
+  <button type="submit">Comprar</button>
+</form>
+
+<!-- Link para visualizar o histórico de compras -->
+<p><a href="/historico">Ver Histórico</a></p>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8, garantindo que caracteres acentuados e especiais sejam exibidos corretamente -->
+    <meta charset="UTF-8">
+    
+    <!-- Define que a página será responsiva, ajustando o layout conforme o tamanho da tela do dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Cadastro</title>
+</head>
+<body>
+    <!-- Título principal da página -->
+    <h1>Cadastro</h1>
+
+    <!-- Formulário de cadastro do usuário -->
+    <form action="/auth/register" method="POST">
+        <!-- Campo para o nome do usuário -->
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required> <!-- O campo nome é obrigatório -->
+        <br>
+        
+        <!-- Campo para o e-mail do usuário -->
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required> <!-- O campo e-mail é obrigatório e deve ser um e-mail válido -->
+        <br>
+        
+        <!-- Campo para a senha do usuário -->
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required> <!-- O campo senha é obrigatório e oculta os caracteres inseridos -->
+        <br>
+        
+        <!-- Botão para enviar o formulário e cadastrar o usuário -->
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <!-- Link para a página de login, caso o usuário já tenha uma conta -->
+    <p>Já tem uma conta? <a href="/auth/login">Faça login aqui</a></p>
+</body>
+</html>

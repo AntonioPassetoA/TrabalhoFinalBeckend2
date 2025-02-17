@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Define a codificação de caracteres como UTF-8, garantindo que os caracteres especiais sejam exibidos corretamente -->
+  <meta charset="UTF-8">
+  
+  <!-- Define o comportamento de exibição em dispositivos móveis (responsividade) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título da página que aparecerá na aba do navegador -->
+  <title>Histórico de Compras</title>
+</head>
+<body>
+  <!-- Título principal da página -->
+  <h1>Histórico de Compras</h1>
+
+  <!-- Exibe um lista de compras feitas pelo usuário -->
+  <ul>
+    {{#each purchases}}  <!-- Itera sobre todas as compras passadas para o template -->
+      <li>
+        <!-- Exibe o ID da compra -->
+        <strong>ID da Compra:</strong> {{this.dataValues.id}} <br>
+
+        <!-- Exibe o status da compra (ex: 'realizada', 'pendente', etc.) -->
+        <strong>Status:</strong> {{this.dataValues.status}} <br>
+
+        <!-- Exibe os ingressos comprados para cada compra -->
+        <strong>Ingressos:</strong>
+        <ul>
+          {{#each this.Tickets}}  <!-- Itera sobre os ingressos comprados nesta compra -->
+            <li>{{this.dataValues.nome}} - Quantidade: {{this.PurchaseTicket.dataValues.quantidade}}</li>
+            <!-- Exibe o nome do ingresso e a quantidade comprada -->
+          {{/each}}
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+
+  <!-- Link para voltar à página de vendas -->
+  <a href="/vendas">Voltar à página de vendas</a>
+</body>
+</html>

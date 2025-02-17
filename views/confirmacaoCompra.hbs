@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Define a codificação de caracteres para UTF-8, garantindo que os caracteres acentuados sejam exibidos corretamente -->
+  <meta charset="UTF-8">
+  
+  <!-- Meta tag para tornar a página responsiva, ajustando o layout conforme o tamanho da tela do dispositivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título da página, exibido na aba do navegador -->
+  <title>Confirmar Compra</title>
+</head>
+<body>
+  <!-- Título principal da página -->
+  <h1>Confirmar Compra</h1>
+  
+  <!-- Lista os detalhes de cada ingresso selecionado para compra -->
+  <ul>
+    {{#each ticketDetails}}  <!-- Itera sobre todos os ingressos passados para o template -->
+      <li>
+        <!-- Exibe o nome, preço, quantidade e total de cada ingresso -->
+        <strong>Ingresso:</strong> {{this.nome}} <br>
+        <strong>Preço:</strong> R$ {{this.preco}} <br>
+        <strong>Quantidade:</strong> {{this.quantidade}} <br>
+        <strong>Total:</strong> R$ {{this.total}} <br>  <!-- Exibe o valor total do ingresso, calculado dinamicamente -->
+      </li>
+    {{/each}} <!-- Fim da iteração -->
+  </ul>
+
+  <!-- Exibe o valor total de todos os ingressos selecionados -->
+  <p><strong>Total a pagar:</strong> R$ {{this.valorTotalIngressos}}</p>
+
+  <!-- Formulário para confirmar a compra -->
+  <form action="/confirmar/{{this.purchaseId}}" method="POST">
+    <button type="submit">Confirmar Compra</button>  <!-- Botão para confirmar a compra -->
+  </form>
+
+  <!-- Formulário para cancelar a compra -->
+  <form action="/cancelar/{{this.purchaseId}}" method="POST">
+    <button type="submit">Cancelar Compra</button>  <!-- Botão para cancelar a compra -->
+  </form>
+</body>
+</html>
